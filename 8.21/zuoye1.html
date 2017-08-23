@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width:50px;height: 50px;background: red;
+			position: absolute;
+			left: 300px;
+			top: 300px;
+		}
+		button{
+			width:40px;
+			height: 40px;
+			margin-left: 10px;
+			float: left;
+			text-align: center;
+			line-height:10px;
+		}
+	</style>	
+	<body>
+		<button>↑</button>
+		<button>↓</button>
+		<button>←</button>
+		<button>→</button>
+		<button>↖</button>
+		<button>↙</button>
+		<button>↗</button>
+		<button>↘</button>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementsByTagName('div')[0];
+		var oBtns=document.getElementsByTagName('button');
+		var nowLeft=300,nowTop=300;
+		oBtns[0].onclick=function(){
+			nowTop -= 10;
+			move();
+		}
+		oBtns[1].onclick=function(){
+			nowTop += 10;
+			move();
+		}
+		oBtns[2].onclick=function(){
+			nowLeft -= 10;
+			move();
+		}
+		oBtns[3].onclick=function(){
+			nowLeft += 10;
+			move();
+		}
+		oBtns[4].onclick=function(){
+			nowTop -= 10;
+			nowLeft -= 10;
+			move();
+		}
+		oBtns[5].onclick=function(){
+			nowTop += 10;
+			nowLeft -= 10;
+			move();
+		}
+		oBtns[6].onclick=function(){
+			nowTop -= 10;
+			nowLeft += 10;
+			move();
+		}
+		oBtns[7].onclick=function(){
+			nowTop += 10;
+			nowLeft += 10;
+			move();
+		}
+		function move(){
+			oDiv.style.left=nowLeft+'px';
+			oDiv.style.top=nowTop+'px';
+		}
+	</script>
+</html>

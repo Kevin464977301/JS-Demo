@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.choose{color: red;}
+		</style>
+	</head>
+	<body>
+		<button>点我</button>
+		<button>点我</button>
+		<button>点我</button>
+	</body>
+	<script type="text/javascript">
+		var oButton=document.getElementsByTagName('button');
+		var arr= [];
+			arr[0]='demo1.js';
+			arr[1]='demo2.js';
+			arr[2]='demo3.js';
+		for (var i=0;i<oButton.length;i++ ) {		
+			(function(i){
+				oButton[i].onclick=function(){
+					var newSrcipt=document.createElement('script');
+					newSrcipt.src=arr[i];
+					document.body.append(newSrcipt);		
+				}
+			})(i)
+		}	
+	</script>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//将字符串“i come from beijing”倒置成“beijing from come i”
+			var str="i come from beijing";
+			function change(str){
+				var arr = str.split(" ");
+				arr.reverse();
+				console.log(arr.join(" "));
+			}
+			change(str);
+			
+			//编写函数rightchange(char,n)实现字符串char循环右移n位
+			function rightchange(char,n){
+				var arr = char.split("");
+				n = n%arr.length;//取余
+				for(var i=0;i<n;i++){
+					arr.unshift(arr.pop());
+				}
+				console.log(arr.join(""));
+			}
+			rightchange("abcdefg",2);
+			
+			//编写函数maxr(char)返回字符串char中最长的连续重复字母
+			function maxr(char){
+		        var a = 0;
+		        var b=1;
+		        var maxlength = 0;
+		        var maxchar = "";
+		        while(a<=char.length-2){
+		            if(char.charAt(a) == char.charAt(b)){
+		                b++;
+		            }else{
+		               if(b-a>maxlength){
+		                  maxlength = b-a;
+		                  maxchar = char.slice(a,b);
+		               }
+		               a = b;
+		               b = a+1;
+		            }
+		        }
+		        console.log(maxchar,maxlength);
+		    }
+		     var str = "mmmiijjjjkkkkkkssptr";
+		     maxr(str);
+		     
+		var str = "战士@德玛西亚之力@盖伦@3000#射手@寒冰射手@艾希@2500#法师@流浪法师@瑞兹@2700";
+//		职业:
+//		称号:
+//		姓名:
+//		血量:
+		var hero=["职业","称号","姓名","血量"];
+		var arr=str.split("#");
+		console.log(arr);
+		for(var i=0;i<arr.length;i++){
+			var arr2=arr[i].split("@");
+			for(var j=0;j<arr2.length;j++){
+				document.write(hero[j]+":"+arr2[j]+"&nbsp;");
+			}
+			document.write("<br/>");
+		}
+		
+		function check(str1,str2){
+			var str,maxlength=0;maxstring="";
+			for (var star=0;star<=str2.length;star++) {
+				for (var end=star+1;end<=str2.length;end++) {
+					str = str2.substring(star,end);
+					if(str1.indexOf(str)!=-1&&str.length>maxlength){
+						maxlength = str.length;
+						maxstring = str;
+					}
+				}
+			}
+			return maxstring;
+		}
+		console.log(check("abcde","abcd"));
+		
+		var num = 3.4;
+		console.log(Math.round(num));
+		console.log(Math.ceil(num));
+		console.log(Math.floor(num));
+		console.log(num.toFixed(2));
+		console.log(Math.pow(2,3));
+		console.log(Math.sqrt(4));
+		
+		function round(num,n){
+			num*=Math.pow(10,n);
+			num = Math.round(num);
+			return num/Math.pow(10,n);
+		}
+		console.log(round(3.14159,2));
+		console.log(Math.max(1,2,3));
+		console.log(Math.min(1,2,3));
+		console.log(Math.max.apply(Math,[1,2,3,4,5]));
+		console.log(Math.min.apply(Math,[1,2,3,4,5]));
+		console.log(Math.random());
+		
+		console.log(document.body.nodeType);
+		console.log(document.body.nodeName);
+		console.log(document.body.nodeValue);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

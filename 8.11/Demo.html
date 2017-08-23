@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+//			var a = parseInt(prompt("请输入一个四位数"));
+//			if(a<1000||a>9999){
+//				alert("输入错误,请重新输入");
+//			}else{
+//				var b = String(parseInt(a%10));
+//				var c = String(parseInt((a/10)%10));
+//				var d = String(parseInt((a/100)%10));
+//				var e = String(parseInt((a/1000)%10));
+//				alert(b+c+d+e);
+//			}
+
+//			for(var i=0;i<=100;i++){
+//				var f=parseInt((i/100)%10);
+//				var g=parseInt((i/10)%10);
+//				var h=parseInt(i%10);
+//				if(i%7==0||h==7){	
+//				}else{
+//					console.log(i);
+//				}
+//			}
+			
+//			function remove(num){
+//				var n = 0;
+//				while (num){
+//					n = n*10+num%10;
+//					num=parseInt(num/10);
+//					/*for(var n=0;num;num=parseInt(num/10)){
+//						n=n*10+num%10;
+//					}*/
+//				}
+//				console.log(n);
+//			}
+//			remove(prompt("请输入数字"));
+			
+			
+//			for(var n=0;n<100;n++){//遍历范围内的数字
+//				var num=n;//保存判断的数字
+//				while(n){//判断个位数是否含7
+//					if(n%10==7){//判断个位是不是7
+//						console.log(num);
+//						break;//一旦出现7就判断下个数
+//					}
+//					n = parseInt(n/10);//改变判断的数字,让其满足循环条件
+//				}
+//				n=num;//把判断的数字重新赋值给n
+//			}
+			
+			function seven(b){
+				for(var n=1;n<b;n++){
+					var num=n;
+					while(num){
+						if(num%10==7){
+							console.log(n);
+							break;
+						}
+						num=parseInt(num/10);
+					}
+				}
+			}
+			seven(1000);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
